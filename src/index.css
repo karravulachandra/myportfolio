@@ -129,6 +129,22 @@
   .timeline-line {
     @apply absolute h-full w-0.5 bg-border left-5 md:left-1/2 top-0 transform -translate-x-1/2;
   }
+  
+  .shimmer-effect {
+    @apply relative overflow-hidden before:absolute before:inset-0 before:-translate-x-full before:animate-shimmer before:bg-gradient-to-r before:from-transparent before:via-white/20 before:to-transparent;
+  }
+  
+  .animate-on-hover {
+    @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-medium;
+  }
+  
+  .text-gradient-blue {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-400;
+  }
+  
+  .text-gradient-purple {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-pink-500;
+  }
 }
 
 /* Intersection Observer animation classes */
@@ -168,4 +184,77 @@
   background-image: 
     radial-gradient(circle at 100% 100%, hsla(var(--secondary), 0.8) 0%, transparent 70%),
     radial-gradient(circle at 0% 0%, hsla(var(--primary), 0.05) 0%, transparent 50%);
+}
+
+/* Advanced animation classes */
+.animated-border {
+  position: relative;
+  overflow: hidden;
+}
+
+.animated-border::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, hsl(var(--primary)));
+  animation: animateBorderTop 2s linear infinite;
+}
+
+.animated-border::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(270deg, transparent, hsl(var(--primary)));
+  animation: animateBorderBottom 2s linear infinite;
+  animation-delay: 1s;
+}
+
+@keyframes animateBorderTop {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+@keyframes animateBorderBottom {
+  0% {
+    right: -100%;
+  }
+  100% {
+    right: 100%;
+  }
+}
+
+/* Enhanced card hover effect */
+.enhanced-card {
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.enhanced-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Background shimmer effect */
+.bg-shimmer {
+  background: linear-gradient(90deg, rgba(255,255,255,0), rgba(255,255,255,0.2), rgba(255,255,255,0));
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
 }

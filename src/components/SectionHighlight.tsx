@@ -22,11 +22,11 @@ const SectionHighlight = ({
 }: SectionHighlightProps) => {
   return (
     <div 
-      className={`fade-in-section py-6 px-6 md:px-8 card-glass card-hover rounded-xl transition-all duration-300`}
-      style={{ transitionDelay: `${index * 100}ms` }}
+      className={`fade-in-section py-6 px-6 md:px-8 card-glass card-hover rounded-xl transition-all duration-500 hover:border-primary/30`}
+      style={{ transitionDelay: `${index * 150}ms` }}
     >
       <div className="flex flex-col h-full">
-        <div className="bg-secondary inline-flex p-3 rounded-lg mb-4 text-primary">
+        <div className="bg-secondary inline-flex p-3 rounded-lg mb-4 text-primary transition-all duration-300 group-hover:bg-primary/10">
           {icon}
         </div>
         
@@ -38,10 +38,10 @@ const SectionHighlight = ({
         
         <Link
           to={link}
-          className="group inline-flex items-center text-primary font-medium hover:underline hover:text-primary/90 transition-all"
+          className="group inline-flex items-center text-primary font-medium hover:underline hover:text-primary/90 transition-all duration-300"
         >
           {linkText}
-          <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+          <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
         </Link>
       </div>
     </div>

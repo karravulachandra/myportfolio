@@ -8,28 +8,28 @@ const Index = () => {
   const highlights = [
     {
       title: "About Me",
-      description: "Learn more about my background, skills, and what drives me as a developer.",
+      description: "Software Developer and AI Enthusiast with strong foundation in cloud computing, machine learning, and web development.",
       link: "/about",
       linkText: "Know more about me",
       icon: <User className="h-6 w-6" />,
     },
     {
       title: "Experience",
-      description: "Explore my professional journey and the companies I've worked with.",
+      description: "Worked as an AI Intern, IT Recruiter and Java Intern across different organizations developing practical industry skills.",
       link: "/experience",
       linkText: "Check my professional journey",
       icon: <Briefcase className="h-6 w-6" />,
     },
     {
       title: "Projects",
-      description: "View a collection of my work, including web applications, design projects, and more.",
+      description: "From AI applications to cloud implementations, explore my diverse portfolio of technical projects.",
       link: "/projects",
       linkText: "See my projects",
       icon: <CodepenIcon className="h-6 w-6" />,
     },
     {
       title: "Certifications",
-      description: "Discover the courses and certifications I've completed to enhance my skills.",
+      description: "Multiple certifications in Google Cloud, Azure, AWS, Python, Java and more to enhance my technical expertise.",
       link: "/certifications",
       linkText: "View my certifications",
       icon: <Award className="h-6 w-6" />,
@@ -74,7 +74,7 @@ const Index = () => {
             </p>
             <Link
               to="/contact"
-              className="inline-flex items-center bg-primary hover:bg-primary/90 text-white px-6 py-3 rounded-md font-medium transition-all duration-300 hover:shadow-md"
+              className="inline-flex items-center bg-primary hover:bg-primary/90 text-white px-6 py-3 rounded-md font-medium transition-all duration-300 hover:shadow-md hover:-translate-y-1"
             >
               <Mail className="mr-2 h-5 w-5" />
               Get In Touch

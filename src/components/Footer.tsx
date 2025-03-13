@@ -1,6 +1,6 @@
 
 import { Link } from "react-router-dom";
-import { Github, Linkedin, Mail } from "lucide-react";
+import { Github, Linkedin, Mail, Code } from "lucide-react";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -10,18 +10,18 @@ const Footer = () => {
       <div className="container mx-auto px-4 md:px-6 py-12">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-6 md:mb-0">
-            <Link to="/" className="text-xl font-semibold">
-              Portfolio
+            <Link to="/" className="text-xl font-semibold hover:text-primary transition-colors duration-300">
+              Chandra Karravula
             </Link>
             <p className="text-muted-foreground mt-2 text-sm">
-              Building digital experiences that make a difference.
+              Innovating today for a brighter tomorrow.
             </p>
           </div>
           
           <div className="flex flex-col items-center md:items-end">
             <div className="flex space-x-4 mb-4">
               <a
-                href="https://github.com"
+                href="https://github.com/chandrashivaji"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-white p-2 rounded-full shadow-soft hover:shadow-medium hover:-translate-y-1 transition-all duration-300"
@@ -30,7 +30,7 @@ const Footer = () => {
                 <Github className="h-5 w-5 text-foreground" />
               </a>
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/in/karravula-chandra-241306221/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-white p-2 rounded-full shadow-soft hover:shadow-medium hover:-translate-y-1 transition-all duration-300"
@@ -39,15 +39,31 @@ const Footer = () => {
                 <Linkedin className="h-5 w-5 text-foreground" />
               </a>
               <a
-                href="mailto:hello@example.com"
+                href="mailto:karravulachandra2001@gmail.com"
                 className="bg-white p-2 rounded-full shadow-soft hover:shadow-medium hover:-translate-y-1 transition-all duration-300"
                 aria-label="Email"
               >
                 <Mail className="h-5 w-5 text-foreground" />
               </a>
+              <a
+                href="https://www.hackerrank.com/profile/karravulachandr1"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-white p-2 rounded-full shadow-soft hover:shadow-medium hover:-translate-y-1 transition-all duration-300"
+                aria-label="HackerRank"
+              >
+                <Code className="h-5 w-5 text-foreground" />
+              </a>
+            </div>
+            <div className="flex flex-wrap justify-center gap-3 mb-4 text-xs text-muted-foreground">
+              <a href="https://www.hackerrank.com/profile/karravulachandr1" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">HackerRank</a>
+              <span>•</span>
+              <a href="https://www.codechef.com/users/chandu_332" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">CodeChef</a>
+              <span>•</span>
+              <a href="https://www.codingninjas.com/studio/profile/CHANDRAK" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">Coding Ninjas</a>
             </div>
             <p className="text-muted-foreground text-sm">
-              © {currentYear} John Doe. All rights reserved.
+              © {currentYear} Chandra Karravula. All rights reserved.
             </p>
           </div>
         </div>

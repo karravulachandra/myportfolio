@@ -1,7 +1,7 @@
 
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Download } from "lucide-react";
 
 const navItems = [
   { name: "Home", path: "/" },
@@ -54,10 +54,10 @@ const Navbar = () => {
         <div className="flex items-center justify-between">
           <Link
             to="/"
-            className="text-xl font-semibold hover:text-primary transition-colors"
+            className="text-xl font-semibold hover:text-primary transition-colors flex items-center"
           >
             <span className="inline-block transform transition-transform hover:scale-105">
-              Portfolio
+              Chandra Karravula
             </span>
           </Link>
 
@@ -74,10 +74,11 @@ const Navbar = () => {
             ))}
             <a
               href="/resume.pdf"
-              download="resume.pdf"
-              className="ml-4 bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded-md transition-colors hover:shadow-md"
+              download="Chandra_Karravula_Resume.pdf"
+              className="ml-4 bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded-md transition-all duration-300 hover:shadow-md hover:-translate-y-1 flex items-center"
             >
-              Download Resume
+              <Download className="mr-2 h-4 w-4" />
+              Resume
             </a>
           </div>
 
@@ -118,9 +119,10 @@ const Navbar = () => {
           ))}
           <a
             href="/resume.pdf"
-            download="resume.pdf"
-            className="block w-full text-center bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded-md transition-colors mt-4"
+            download="Chandra_Karravula_Resume.pdf"
+            className="block w-full text-center bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded-md transition-all duration-300 mt-4 flex items-center justify-center"
           >
+            <Download className="mr-2 h-4 w-4" />
             Download Resume
           </a>
         </div>

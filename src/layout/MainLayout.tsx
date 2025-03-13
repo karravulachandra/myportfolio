@@ -41,8 +41,24 @@ const MainLayout = ({ children }: MainLayoutProps) => {
     };
   }, [location.pathname]);
 
+  // Add Lato font
+  useEffect(() => {
+    // Add Lato font from Google Fonts
+    const link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = 'https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap';
+    document.head.appendChild(link);
+    
+    // Apply font to the body
+    document.body.classList.add('font-lato');
+    
+    return () => {
+      document.head.removeChild(link);
+    };
+  }, []);
+
   return (
-    <div className="flex min-h-screen flex-col antialiased bg-background">
+    <div className="flex min-h-screen flex-col antialiased bg-background font-lato">
       <Navbar />
       <main className="flex-1">
         <div className="page-transition">{children}</div>

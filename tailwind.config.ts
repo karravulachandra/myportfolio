@@ -62,6 +62,7 @@ export default {
 			fontFamily: {
 				sans: ['SF Pro Display', 'Inter', 'sans-serif'],
 				mono: ['SF Mono', 'monospace'],
+				lato: ['Lato', 'sans-serif'],
 			},
 			keyframes: {
 				'accordion-down': {
@@ -104,6 +105,14 @@ export default {
 					'0%': { transform: 'rotate(0)' },
 					'100%': { transform: 'rotate(360deg)' },
 				},
+				'shimmer': {
+					'0%': { backgroundPosition: '-200% 0' },
+					'100%': { backgroundPosition: '200% 0' },
+				},
+				'bounce-subtle': {
+					'0%, 100%': { transform: 'translateY(0)' },
+					'50%': { transform: 'translateY(-4px)' },
+				},
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
@@ -116,6 +125,8 @@ export default {
 				'float': 'float 3s ease-in-out infinite',
 				'pulse-subtle': 'pulse-subtle 2s ease-in-out infinite',
 				'rotate-center': 'rotate-center 8s linear infinite',
+				'shimmer': 'shimmer 2s infinite linear',
+				'bounce-subtle': 'bounce-subtle 2s ease-in-out infinite',
 			},
 			boxShadow: {
 				'soft': '0 4px 20px rgba(0, 0, 0, 0.05)',
