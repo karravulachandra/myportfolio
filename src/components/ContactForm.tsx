@@ -1,7 +1,8 @@
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Send } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import emailjs from "emailjs-com";
 
 const ContactForm = () => {
   const { toast } = useToast();
@@ -12,6 +13,26 @@ const ContactForm = () => {
     message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [emailjsCredentials, setEmailjsCredentials] = useState({
+    serviceId: "",
+    templateId: "",
+    userId: "",
+  });
+
+  useEffect(() => {
+    // Get EmailJS credentials from localStorage
+    const serviceId = localStorage.getItem("emailjs_service_id");
+    const templateId = localStorage.getItem("emailjs_template_id");
+    const userId = localStorage.getItem("emailjs_user_id");
+
+    if (serviceId && templateId && userId) {
+      setEmailjsCredentials({
+        serviceId,
+        templateId,
+        userId,
+      });
+    }
+  }, []);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -20,26 +41,62 @@ const ContactForm = () => {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate form submission
-    setTimeout(() => {
+    const { serviceId, templateId, userId } = emailjsCredentials;
+    
+    if (!serviceId || !templateId || !userId) {
+      toast({
+        title: "Configuration needed",
+        description: "Please set up your EmailJS credentials first",
+        variant: "destructive",
+      });
+      setIsSubmitting(false);
+      return;
+    }
+    
+    try {
+      // Prepare the email template parameters
+      const templateParams = {
+        from_name: formData.name,
+        from_email: formData.email,
+        subject: formData.subject,
+        message: formData.message,
+        to_name: "Chandra Karravula",
+      };
+
+      // Send the email using EmailJS
+      await emailjs.send(
+        serviceId,
+        templateId,
+        templateParams,
+        userId
+      );
+
       toast({
         title: "Message sent!",
         description: "Thanks for reaching out. I'll get back to you soon.",
       });
       
+      // Reset the form after successful submission
       setFormData({
         name: "",
         email: "",
         subject: "",
         message: "",
       });
-      
+    } catch (error) {
+      console.error("Error sending email:", error);
+      toast({
+        title: "Error sending message",
+        description: "There was a problem sending your message. Please try again later.",
+        variant: "destructive",
+      });
+    } finally {
       setIsSubmitting(false);
-    }, 1000);
+    }
   };
 
   return (

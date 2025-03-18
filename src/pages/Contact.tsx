@@ -1,10 +1,12 @@
 
 import ContactForm from "@/components/ContactForm";
+import EmailJSCredentialsForm from "@/components/EmailJSCredentialsForm";
 import { Github, Linkedin, Mail, MapPin, MessageSquare, Phone } from "lucide-react";
 
 const Contact = () => {
   return (
     <div className="pt-20">
+      <EmailJSCredentialsForm />
       <section className="py-16 md:py-24">
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-3xl mx-auto text-center mb-12 fade-in-section">
@@ -26,8 +28,8 @@ const Contact = () => {
                     </div>
                     <div>
                       <h3 className="text-sm font-medium text-muted-foreground mb-1">Email</h3>
-                      <a href="mailto:hello@example.com" className="text-foreground hover:text-primary transition-colors">
-                        hello@example.com
+                      <a href="mailto:karravulachandra2001@gmail.com" className="text-foreground hover:text-primary transition-colors">
+                        karravulachandra2001@gmail.com
                       </a>
                     </div>
                   </div>
@@ -38,8 +40,8 @@ const Contact = () => {
                     </div>
                     <div>
                       <h3 className="text-sm font-medium text-muted-foreground mb-1">Phone</h3>
-                      <a href="tel:+15555555555" className="text-foreground hover:text-primary transition-colors">
-                        +1 (555) 555-5555
+                      <a href="tel:+17032269433" className="text-foreground hover:text-primary transition-colors">
+                        +1 (703) 226-9433
                       </a>
                     </div>
                   </div>
@@ -50,7 +52,7 @@ const Contact = () => {
                     </div>
                     <div>
                       <h3 className="text-sm font-medium text-muted-foreground mb-1">Location</h3>
-                      <p className="text-foreground">San Francisco, CA</p>
+                      <p className="text-foreground">Guntur, Andhra Pradesh</p>
                     </div>
                   </div>
                 </div>
@@ -59,7 +61,7 @@ const Contact = () => {
                   <h3 className="text-sm font-medium text-muted-foreground mb-4">Connect With Me</h3>
                   <div className="flex space-x-4">
                     <a
-                      href="https://github.com"
+                      href="https://github.com/chandrashivaji"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="bg-white p-3 rounded-full shadow-soft hover:shadow-medium hover:-translate-y-1 transition-all duration-300"
@@ -68,7 +70,7 @@ const Contact = () => {
                       <Github className="h-5 w-5 text-foreground" />
                     </a>
                     <a
-                      href="https://linkedin.com"
+                      href="https://www.linkedin.com/in/karravula-chandra-241306221/"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="bg-white p-3 rounded-full shadow-soft hover:shadow-medium hover:-translate-y-1 transition-all duration-300"
@@ -77,7 +79,7 @@ const Contact = () => {
                       <Linkedin className="h-5 w-5 text-foreground" />
                     </a>
                     <a
-                      href="mailto:hello@example.com"
+                      href="mailto:karravulachandra2001@gmail.com"
                       className="bg-white p-3 rounded-full shadow-soft hover:shadow-medium hover:-translate-y-1 transition-all duration-300"
                       aria-label="Email"
                     >
@@ -109,7 +111,7 @@ const Contact = () => {
               I'm currently available for freelance work and open to discussing full-time opportunities. If you have a project that needs some creative coding, let's talk!
             </p>
             <a
-              href="mailto:hello@example.com"
+              href="mailto:karravulachandra2001@gmail.com"
               className="inline-flex items-center bg-primary hover:bg-primary/90 text-white px-6 py-3 rounded-md font-medium transition-all duration-300 hover:shadow-md"
             >
               <Mail className="mr-2 h-5 w-5" />
