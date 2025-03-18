@@ -3,6 +3,9 @@ import { useState, useEffect } from "react";
 import { Send } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import emailjs from "emailjs-com";
+import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
+import { Button } from "@/components/ui/button";
+import { Info } from "lucide-react";
 
 const ContactForm = () => {
   const { toast } = useToast();
@@ -18,12 +21,14 @@ const ContactForm = () => {
     templateId: "",
     userId: "",
   });
+  const [useDirectEmail, setUseDirectEmail] = useState(false);
 
   useEffect(() => {
     // Get EmailJS credentials from localStorage
     const serviceId = localStorage.getItem("emailjs_service_id");
     const templateId = localStorage.getItem("emailjs_template_id");
     const userId = localStorage.getItem("emailjs_user_id");
+    const directEmailPref = localStorage.getItem("use_direct_email");
 
     if (serviceId && templateId && userId) {
       setEmailjsCredentials({
@@ -31,6 +36,9 @@ const ContactForm = () => {
         templateId,
         userId,
       });
+      setUseDirectEmail(false);
+    } else if (directEmailPref === "true") {
+      setUseDirectEmail(true);
     }
   }, []);
 
@@ -41,9 +49,45 @@ const ContactForm = () => {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
+  const handleDirectEmailSubmit = () => {
+    const { name, email, subject, message } = formData;
+    
+    // Create a mailto link with the form data
+    const body = `
+Name: ${name}
+Email: ${email}
+
+${message}
+    `;
+    
+    const mailtoLink = `mailto:karravulachandra2001@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    
+    // Open the email client
+    window.location.href = mailtoLink;
+    
+    // Reset the form
+    setFormData({
+      name: "",
+      email: "",
+      subject: "",
+      message: "",
+    });
+    
+    toast({
+      title: "Email client opened",
+      description: "Your default email client has been opened with the message details.",
+    });
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    
+    if (useDirectEmail) {
+      handleDirectEmailSubmit();
+      setIsSubmitting(false);
+      return;
+    }
     
     const { serviceId, templateId, userId } = emailjsCredentials;
     
@@ -101,6 +145,30 @@ const ContactForm = () => {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
+      <div className="flex justify-between items-center">
+        <h2 className="text-xl font-medium">Contact Form</h2>
+        {useDirectEmail && (
+          <Popover>
+            <PopoverTrigger asChild>
+              <Button variant="ghost" size="icon">
+                <Info className="h-4 w-4" />
+              </Button>
+            </PopoverTrigger>
+            <PopoverContent className="w-80">
+              <div className="space-y-2">
+                <h3 className="font-medium">Direct Email Mode</h3>
+                <p className="text-sm text-muted-foreground">
+                  This form will open your default email client when submitted. No data is stored or processed on a server.
+                </p>
+                <p className="text-sm text-muted-foreground">
+                  To use EmailJS instead, clear your browser's local storage and refresh this page.
+                </p>
+              </div>
+            </PopoverContent>
+          </Popover>
+        )}
+      </div>
+
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div className="space-y-2">
           <label
@@ -188,7 +256,7 @@ const ContactForm = () => {
           <>Sending...</>
         ) : (
           <>
-            Send Message
+            {useDirectEmail ? "Open Email Client" : "Send Message"}
             <Send className="ml-2 h-4 w-4" />
           </>
         )}
