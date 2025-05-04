@@ -4,6 +4,9 @@ import { Link, useLocation } from "react-router-dom";
 import { Menu, X, Download } from "lucide-react";
 import ThemeToggle from "./ThemeToggle";
 
+// Import logo
+import myLogo from "../assets/logos/mylogo.png";
+
 const navItems = [
   { name: "Home", path: "/" },
   { name: "About Me", path: "/about" },
@@ -58,7 +61,7 @@ const Navbar = () => {
             className="hover:text-primary transition-colors flex items-center"
           >
             <img
-              src="/mylogo.png"
+              src={myLogo}
               alt="Chandra Karravula Logo"
               className="h-20 w-auto transform transition-transform hover:scale-105"
             />

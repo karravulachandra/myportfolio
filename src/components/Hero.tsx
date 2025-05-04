@@ -7,6 +7,9 @@ import SkillTags from "./SkillTags";
 import ParticleBackground from "./ParticleBackground";
 import ThemeToggle from "./ThemeToggle";
 
+// Import logo
+import myLogo from "../assets/logos/mylogo.png";
+
 const Hero = () => {
   const [terminalComplete, setTerminalComplete] = useState(false);
   const [showSkills, setShowSkills] = useState(false);
@@ -69,7 +72,7 @@ const Hero = () => {
               <div className="absolute -inset-0.5 bg-gradient-to-r from-primary/20 to-blue-500/20 rounded-full blur-xl opacity-70 animate-pulse-subtle"></div>
               <div className="absolute inset-0 rounded-full glowing-border"></div>
               <img
-                src="src/assets/logos/mylogo.png"
+                src={myLogo}
                 alt="Chandra Karravula Logo"
                 className="w-full relative z-10 animate-pulse-subtle hover:animate-none transition-all"
               />

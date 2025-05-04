@@ -2,6 +2,9 @@
 import { Link } from "react-router-dom";
 import { Github, Linkedin, Mail, Code } from "lucide-react";
 
+// Import logo
+import myLogo from "../assets/logos/mylogo.png";
+
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
@@ -13,7 +16,7 @@ const Footer = () => {
           <div className="mb-6 md:mb-0">
             <Link to="/" className="hover:text-primary transition-colors duration-300">
               <img
-                src="/mylogo.png"
+                src={myLogo}
                 alt="Chandra Karravula Logo"
                 className="h-16 w-auto transform transition-transform hover:scale-105"
               />
