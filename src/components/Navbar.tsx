@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, Download } from "lucide-react";
+import ThemeToggle from "./ThemeToggle";
 
 const navItems = [
   { name: "Home", path: "/" },
@@ -46,7 +47,7 @@ const Navbar = () => {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-white/80 backdrop-blur-md shadow-soft py-3"
+          ? "bg-white/95 dark:bg-gray-900/95 backdrop-blur-md shadow-md py-3 border-b border-border/40 dark:border-gray-700/40"
           : "bg-transparent py-5"
       }`}
     >
@@ -54,15 +55,17 @@ const Navbar = () => {
         <div className="flex items-center justify-between">
           <Link
             to="/"
-            className="text-xl font-semibold hover:text-primary transition-colors flex items-center"
+            className="hover:text-primary transition-colors flex items-center"
           >
-            <span className="inline-block transform transition-transform hover:scale-105">
-              Chandra Karravula
-            </span>
+            <img
+              src="/website-logo.png"
+              alt="Chandra Karravula Logo"
+              className="h-12 w-auto transform transition-transform hover:scale-105"
+            />
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-1">
+          <div className="hidden md:flex items-center space-x-2">
             {navItems.map((item) => (
               <Link
                 key={item.name}
@@ -72,10 +75,14 @@ const Navbar = () => {
                 {item.name}
               </Link>
             ))}
+            <div className="ml-3 mr-2">
+              <ThemeToggle className="h-9 w-9" />
+            </div>
             <a
-              href="/resume.pdf"
-              download="Chandra_Karravula_Resume.pdf"
-              className="ml-4 bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded-md transition-all duration-300 hover:shadow-md hover:-translate-y-1 flex items-center"
+              href="https://drive.google.com/file/d/1zFpvr_2gkjakYTxc9XzihfzLNsSOFa96/view?usp=sharing"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="ml-2 btn-primary"
             >
               <Download className="mr-2 h-4 w-4" />
               Resume
@@ -99,8 +106,8 @@ const Navbar = () => {
 
       {/* Mobile Navigation */}
       <div
-        className={`md:hidden bg-white/95 backdrop-blur-lg shadow-md overflow-hidden transition-all duration-300 ease-in-out ${
-          isOpen ? "max-h-screen py-3" : "max-h-0"
+        className={`md:hidden bg-white/98 dark:bg-gray-900/98 backdrop-blur-lg shadow-lg overflow-hidden transition-all duration-300 ease-in-out border-b border-border/40 dark:border-gray-700/40 ${
+          isOpen ? "max-h-screen py-4" : "max-h-0"
         }`}
       >
         <div className="container mx-auto px-4 py-2 space-y-3">
@@ -108,23 +115,30 @@ const Navbar = () => {
             <Link
               key={item.name}
               to={item.path}
-              className={`block py-2 px-4 text-base ${
+              className={`block py-3 px-4 text-base ${
                 isActive(item.path)
-                  ? "text-primary font-medium"
+                  ? "text-primary font-medium border-l-2 border-primary pl-3"
                   : "text-foreground"
-              } hover:bg-secondary rounded-md transition-colors`}
+              } hover:bg-secondary/50 dark:hover:bg-gray-800/50 rounded-md transition-colors`}
             >
               {item.name}
             </Link>
           ))}
-          <a
-            href="/resume.pdf"
-            download="Chandra_Karravula_Resume.pdf"
-            className="block w-full text-center bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded-md transition-all duration-300 mt-4 flex items-center justify-center"
-          >
-            <Download className="mr-2 h-4 w-4" />
-            Download Resume
-          </a>
+          <div className="pt-2 mt-2 border-t border-border/30 dark:border-gray-700/30">
+            <div className="flex items-center justify-between py-2 px-4">
+              <span className="text-sm font-medium text-muted-foreground">Toggle Theme</span>
+              <ThemeToggle />
+            </div>
+            <a
+              href="https://drive.google.com/file/d/1zFpvr_2gkjakYTxc9XzihfzLNsSOFa96/view?usp=sharing"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block w-full text-center btn-primary mt-2"
+            >
+              <Download className="mr-2 h-4 w-4" />
+              View Resume
+            </a>
+          </div>
         </div>
       </div>
     </nav>

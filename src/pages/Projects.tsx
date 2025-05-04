@@ -3,78 +3,127 @@ import { useState } from "react";
 import ProjectCard from "@/components/ProjectCard";
 
 // Project categories for filtering
-type Category = "All" | "Web" | "Mobile" | "Design";
+type Category = "All" | "Web" | "Mobile" | "Java" | "PHP" | "Python" | "ML/AI";
 
 const Projects = () => {
   const [activeCategory, setActiveCategory] = useState<Category>("All");
 
   const projects = [
+    // Featured Web Projects
     {
-      title: "E-Commerce Platform",
-      description: "A full-featured online store with cart, checkout, and payment integration.",
-      fullDescription: "A comprehensive e-commerce solution built with React, Node.js, and Stripe integration. Features include product catalog, user accounts, shopping cart, secure checkout, order management, and an admin dashboard for inventory control. The platform is fully responsive and optimized for all devices, with a focus on accessibility and user experience.",
-      technologies: ["React", "Node.js", "Express", "MongoDB", "Stripe"],
-      image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
-      demoLink: "https://example.com",
-      codeLink: "https://github.com/example",
+      title: "Sports Portfolio",
+      description: "A responsive sports portfolio website built with React and CSS.",
+      fullDescription: "A modern, responsive sports portfolio website built with React and CSS. This project showcases sports achievements, events, and profiles with a clean and interactive user interface. The site features responsive design principles ensuring it works well across all devices and includes dynamic content loading and smooth animations.",
+      technologies: ["React", "CSS", "JavaScript", "Responsive Design"],
+      image: "https://images.unsplash.com/photo-1517649763962-0c623066013b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+      demoLink: "https://siddu-us.vercel.app",
+      codeLink: "https://github.com/karravulachandra/sports-portfolio",
       category: "Web",
+      featured: true
     },
     {
-      title: "Task Management App",
-      description: "A productivity app for organizing tasks, projects, and deadlines.",
-      fullDescription: "A feature-rich task management application designed to help users organize their work efficiently. Built with React Native for cross-platform support, it includes features like task creation, due dates, priority levels, project organization, team collaboration, notifications, and detailed progress analytics. The app syncs data across devices and works offline.",
-      technologies: ["React Native", "Firebase", "Redux", "TypeScript"],
-      image: "https://images.unsplash.com/photo-1540350394557-8d14678e7f91?ixlib=rb-1.2.1&auto=format&fit=crop&w=1489&q=80",
-      demoLink: "https://example.com",
-      codeLink: "https://github.com/example",
-      category: "Mobile",
-    },
-    {
-      title: "Financial Dashboard",
-      description: "Interactive dashboard for visualizing financial data and metrics.",
-      fullDescription: "A sophisticated financial analytics dashboard that provides real-time insights into financial performance. Built with React, D3.js, and a Node.js backend, it features interactive charts, customizable widgets, data filtering, export capabilities, and automated reports. The dashboard integrates with multiple financial data sources and offers personalized views for different user roles.",
-      technologies: ["React", "D3.js", "Node.js", "PostgreSQL"],
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
-      demoLink: "https://example.com",
-      codeLink: "https://github.com/example",
-      category: "Web",
-    },
-    {
-      title: "Health & Fitness App",
-      description: "Mobile application for tracking workouts, nutrition, and health goals.",
-      fullDescription: "A comprehensive health and fitness mobile application that helps users achieve their wellness goals. Built with Flutter for a seamless cross-platform experience, it includes workout tracking, nutrition monitoring, progress visualization, personalized recommendations, social sharing, and integration with wearable devices. The app emphasizes privacy and data security while providing valuable insights.",
-      technologies: ["Flutter", "Dart", "Firebase", "Google Fit API"],
-      image: "https://images.unsplash.com/photo-1544932503-b94999de7df7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
-      demoLink: "https://example.com",
-      codeLink: "https://github.com/example",
-      category: "Mobile",
-    },
-    {
-      title: "Brand Identity System",
-      description: "Complete brand identity design for a technology startup.",
-      fullDescription: "A comprehensive brand identity system created for a tech startup entering the market. The project included research, strategy development, logo design, typography selection, color palette creation, iconography, application guidelines, and marketing materials. The identity system was designed to be flexible, modern, and scalable across digital and physical touchpoints.",
-      technologies: ["Figma", "Illustrator", "Photoshop", "InDesign"],
-      image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
-      demoLink: "https://example.com",
-      category: "Design",
-    },
-    {
-      title: "Real Estate Platform",
-      description: "Web application for property listings, searches, and management.",
-      fullDescription: "A feature-rich real estate platform that connects property buyers, sellers, and agents. Built with Next.js and a Node.js backend, it includes property listings with advanced search, interactive maps, virtual tours, saved searches, agent directories, mortgage calculators, and a CMS for property management. The platform is optimized for SEO and features responsive design for all devices.",
-      technologies: ["Next.js", "Node.js", "MongoDB", "MapBox API"],
+      title: "Village Agency",
+      description: "A real estate platform for property listings and management.",
+      fullDescription: "A comprehensive real estate platform that helps users find and manage properties. Built with JavaScript, HTML, and CSS, it includes property listings with advanced search functionality, detailed property information pages, contact forms, and responsive design for all devices. The platform is designed to provide a seamless experience for both property buyers and sellers.",
+      technologies: ["JavaScript", "HTML", "CSS", "Responsive Design"],
       image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
-      demoLink: "https://example.com",
-      codeLink: "https://github.com/example",
+      codeLink: "https://github.com/karravulachandra/VillageAgency.1.0.0-",
       category: "Web",
+      featured: true
     },
+
+    // PHP Projects
+    {
+      title: "Hotel Booking Management System",
+      description: "A PHP-based hotel booking and management system.",
+      fullDescription: "A comprehensive hotel booking management system built with PHP and MySQL. Features include room booking with date selection, user registration and authentication, admin dashboard for hotel management, booking history tracking, and secure payment processing integration. The system allows hotel administrators to efficiently manage bookings, room inventory, and customer information through an intuitive interface.",
+      technologies: ["PHP", "MySQL", "HTML", "CSS", "JavaScript", "Bootstrap"],
+      image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+      codeLink: "https://github.com/karravulachandra/miniproject",
+      category: "PHP",
+      featured: true
+    },
+
+    // Java Projects
+    {
+      title: "Online Job Portal System",
+      description: "A Java-based job portal application for job seekers and employers.",
+      fullDescription: "An online job portal system developed in Java that connects job seekers with employers. The application allows users to create and manage profiles, search for jobs using multiple filters, apply to positions, and track application status. Employers can post job listings, review applications, schedule interviews, and manage their hiring process through an intuitive dashboard. The system includes email notifications and reporting features.",
+      technologies: ["Java", "JSP", "Servlet", "MySQL", "HTML", "CSS", "Bootstrap"],
+      image: "https://images.unsplash.com/photo-1586281380349-632531db7ed4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+      codeLink: "https://github.com/karravulachandra/Java-Project",
+      category: "Java",
+      featured: true
+    },
+    {
+      title: "Java Lab Exercises",
+      description: "Collection of Java programming exercises and solutions.",
+      fullDescription: "A comprehensive collection of Java programming exercises and their solutions covering fundamental to advanced concepts. This repository includes implementations of various data structures (arrays, linked lists, trees, graphs), algorithms (sorting, searching, dynamic programming), and object-oriented programming concepts. It serves as both a learning resource for beginners and a reference for experienced Java developers.",
+      technologies: ["Java", "OOP", "Data Structures", "Algorithms", "Design Patterns"],
+      image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+      codeLink: "https://github.com/karravulachandra/javalabexercise",
+      category: "Java"
+    },
+
+    // Mobile Projects
+    {
+      title: "Mobile Application Development",
+      description: "Android mobile application development projects and templates.",
+      fullDescription: "A collection of Android mobile application development projects, templates, and examples. This repository showcases various mobile app implementations, UI designs, and functionality examples for Android development. It includes both complete applications and reusable components for features like user authentication, data storage, API integration, and responsive layouts for different screen sizes.",
+      technologies: ["Java", "Android", "XML", "SQLite", "RESTful APIs"],
+      image: "https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+      codeLink: "https://github.com/karravulachandra/mobile-application-development",
+      category: "Mobile",
+      featured: true
+    },
+
+    // ML/AI Projects
+    {
+      title: "Object Detection System",
+      description: "Object detection using TensorFlow and deep learning techniques.",
+      fullDescription: "An object detection system built with TensorFlow that can identify and locate multiple objects in images and video streams. The project implements state-of-the-art deep learning models for real-time object detection with high accuracy. It includes both still image processing and live webcam detection capabilities, with customizable confidence thresholds and support for multiple object classes.",
+      technologies: ["Python", "TensorFlow", "Deep Learning", "Computer Vision", "Jupyter Notebook"],
+      image: "https://images.unsplash.com/photo-1535378917042-10a22c95931a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+      codeLink: "https://github.com/karravulachandra/Object-Detection-By-Ankan",
+      category: "ML/AI",
+      featured: true
+    },
+    {
+      title: "Malware Detection System",
+      description: "Machine learning and deep learning approach to detect malware.",
+      fullDescription: "A malware detection system that uses machine learning and deep learning techniques to identify malicious software. The project implements various classification algorithms to analyze file characteristics and behavior patterns to distinguish between benign and malicious files. The system achieves high accuracy in detecting both known and previously unseen malware variants through feature extraction and model optimization.",
+      technologies: ["Python", "Machine Learning", "Deep Learning", "Jupyter Notebook", "Data Analysis"],
+      image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+      codeLink: "https://github.com/karravulachandra/Malware-detection-with-ML-and-deep-learning",
+      category: "ML/AI"
+    },
+    {
+      title: "MLOps Fundamentals",
+      description: "Implementation of MLOps principles and practices for ML projects.",
+      fullDescription: "A comprehensive exploration of MLOps (Machine Learning Operations) fundamentals, covering the entire ML lifecycle from data preparation to model deployment and monitoring. The project includes implementations of data transformation pipelines, experiment tracking with MLflow, model serving with BentoML, and workflow orchestration. It demonstrates best practices for creating reproducible, scalable, and production-ready machine learning systems.",
+      technologies: ["Python", "MLflow", "Kafka", "BentoML", "Docker", "Orchestration"],
+      image: "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+      codeLink: "https://github.com/karravulachandra/Fundamentals-of-MLOps",
+      category: "ML/AI"
+    },
+
+    // Python Projects
+    {
+      title: "Mini Desktop Assistant",
+      description: "Voice-controlled desktop assistant with multiple functionalities.",
+      fullDescription: "A voice-controlled desktop assistant built with Python that responds to various voice commands. Features include web searches on Google and YouTube, reading information from Wikipedia, playing random movies from a collection, providing time updates, and more. The assistant uses speech recognition and text-to-speech technologies to create a hands-free user experience for everyday computer tasks.",
+      technologies: ["Python", "Speech Recognition", "Text-to-Speech", "APIs", "Automation"],
+      image: "https://images.unsplash.com/photo-1589254065878-42c9da997008?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+      codeLink: "https://github.com/karravulachandra/Mini-Desktop-Assistant",
+      category: "Python"
+    }
   ];
 
-  const filteredProjects = activeCategory === "All" 
-    ? projects 
+  const filteredProjects = activeCategory === "All"
+    ? projects
     : projects.filter(project => project.category === activeCategory);
 
-  const categories: Category[] = ["All", "Web", "Mobile", "Design"];
+  const categories: Category[] = ["All", "Web", "Mobile", "Java", "PHP", "Python", "ML/AI"];
 
   return (
     <div className="pt-20">
@@ -86,7 +135,7 @@ const Projects = () => {
               A collection of my work, ranging from web applications to design projects.
             </p>
           </div>
-          
+
           <div className="mb-12 flex justify-center fade-in-section">
             <div className="inline-flex bg-secondary/50 p-1 rounded-lg">
               {categories.map((category) => (
@@ -104,7 +153,7 @@ const Projects = () => {
               ))}
             </div>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredProjects.map((project, index) => (
               <ProjectCard
