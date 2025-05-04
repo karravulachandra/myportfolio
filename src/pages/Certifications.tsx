@@ -4,7 +4,28 @@ import CertificationCard from "@/components/CertificationCard";
 import { BookOpen, Sparkles, GraduationCap, Brain, Cpu, Network, Zap, BarChart2 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
-// No image imports - using direct file paths instead
+// Import logo images
+import googleCloudLogo from "../assets/logos/googlecloud.jpg";
+import awsLogo from "../assets/logos/aws.jpg";
+import microsoftLogo from "../assets/logos/microsoft.jpg";
+import nptelLogo from "../assets/logos/nptel.png";
+import courseraLogo from "../assets/logos/download.png";
+import udemyLogo from "../assets/logos/og-image.png";
+
+// Import certificate images
+import iotCert from "../assets/New folder/IOT.png";
+import cloudComputingDistributedCert from "../assets/New folder/Cloud Computing and Distributed Systems.jpg";
+import cloudComputingCert from "../assets/New folder/Cloud computing.jpg";
+import pythonDataScienceCert from "../assets/New folder/Python for Data Science.jpg";
+import dataAnalyticsPythonCert from "../assets/New folder/Data Analytics with Python.jpg";
+import androidCert from "../assets/New folder/android.jpg";
+import joyCert from "../assets/New folder/joy.jpg";
+import pythonCert from "../assets/New folder/python.jpg";
+import windowsSecCert from "../assets/New folder/windows-sec.jpg";
+import javaCert from "../assets/New folder/java.jpg";
+import linuxCert from "../assets/New folder/linux.jpg";
+import windowsCert from "../assets/New folder/windows.jpg";
+import googleDataAnalyticsCert from "../assets/New folder/googledataanalytics.png";
 
 // Certification categories for filtering
 type Category = "All" | "Development" | "Design" | "Cloud" | "Data Science";
@@ -61,7 +82,7 @@ const Certifications = () => {
       date: "2023",
       link: "https://www.credly.com/badges/94368d2e-9e13-4c09-90ca-54c5ea9eba53/public_url", // Link to the credential URL
       category: "Cloud",
-      image: "/images/googlecloud.jpg", // Using the Google Cloud logo
+      image: googleCloudLogo, // Using the Google Cloud logo
     },
     {
       name: "Cloud Digital Leader Certification",
@@ -69,7 +90,7 @@ const Certifications = () => {
       date: "2022",
       link: "https://www.credly.com/badges/a374da7d-dadd-4522-90f9-67d23fb60c88/public_url", // Link to the credential URL
       category: "Cloud",
-      image: "/images/googlecloud.jpg", // Using the Google Cloud logo
+      image: googleCloudLogo, // Using the Google Cloud logo
     },
     {
       name: "AWS Academy Graduate - AWS Academy Cloud Foundations",
@@ -77,7 +98,7 @@ const Certifications = () => {
       date: "2022",
       link: "https://www.credly.com/badges/9eefeda7-7044-4829-b5c5-a35f473f0eac/public_url", // Link to the credential URL
       category: "Cloud",
-      image: "/images/aws.jpg", // Using the AWS logo
+      image: awsLogo, // Using the AWS logo
     },
     {
       name: "Microsoft Certified: Azure Fundamentals",
@@ -85,7 +106,7 @@ const Certifications = () => {
       date: "2024",
       link: "https://www.credly.com/badges/3efe931d-05b4-4458-ac38-d767c1eef23b/public_url", // Link to the credential URL
       category: "Cloud",
-      image: "/images/microsoft.jpg", // Using the Microsoft logo
+      image: microsoftLogo, // Using the Microsoft logo
     },
     {
       name: "Microsoft Certified: Azure Fundamentals",
@@ -93,7 +114,7 @@ const Certifications = () => {
       date: "2024",
       link: "https://www.credly.com/badges/3efe931d-05b4-4458-ac38-d767c1eef23b/public_url", // Link to the credential URL
       category: "Design",
-      image: "/images/microsoft.jpg", // Using the Microsoft logo
+      image: microsoftLogo, // Using the Microsoft logo
     },
     {
       name: "AWS Educate Introduction to Generative AI",
@@ -101,111 +122,111 @@ const Certifications = () => {
       date: "2025",
       link: "https://www.credly.com/badges/c7fb63d9-1592-4b2d-9a72-d391f69ed562/public_url", // Link to the credential URL
       category: "Design",
-      image: "/images/aws.jpg", // Using the AWS logo
+      image: awsLogo, // Using the AWS logo
     },
     {
       name: "Google Data Analytics",
       issuer: "Coursera",
       date: "May 2023",
-      link: "/images/googledataanalytics.png", // Link to the full certificate image
+      link: googleDataAnalyticsCert, // Link to the full certificate image
       category: "Data Science",
-      image: "/images/coursera-logo.svg", // Using the Coursera logo
+      image: courseraLogo, // Using the Coursera logo
     },
     {
       name: "Introduction to Industry 4.0 and Industrial Internet of Things",
       issuer: "NPTEL",
       date: "Jul-Oct 2023",
-      link: "/images/iot.png", // Link to the full certificate image
+      link: iotCert, // Link to the full certificate image
       category: "Cloud",
-      image: "/images/nptel-iot.png", // Using the NPTEL logo
+      image: nptelLogo, // Using the NPTEL logo
     },
     {
       name: "Cloud Computing and Distributed Systems",
       issuer: "NPTEL",
       date: "Jan-Mar 2023",
-      link: "/images/cloud-computing-distributed.png", // Link to the full certificate image
+      link: cloudComputingDistributedCert, // Link to the full certificate image
       category: "Cloud",
-      image: "/images/nptel-iot.png", // Using the NPTEL logo
+      image: nptelLogo, // Using the NPTEL logo
     },
     {
       name: "Cloud Computing",
       issuer: "NPTEL",
       date: "Jul-Oct 2022",
-      link: "/images/cloud-computing.png", // Link to the full certificate image
+      link: cloudComputingCert, // Link to the full certificate image
       category: "Cloud",
-      image: "/images/nptel-iot.png", // Using the NPTEL logo
+      image: nptelLogo, // Using the NPTEL logo
     },
     {
       name: "Python for Data Science",
       issuer: "NPTEL",
       date: "Jan-Feb 2022",
-      link: "/images/python-data-science.jpg", // Link to the full certificate image
+      link: pythonDataScienceCert, // Link to the full certificate image
       category: "Development",
-      image: "/images/nptel-iot.png", // Using the NPTEL logo
+      image: nptelLogo, // Using the NPTEL logo
     },
     {
       name: "Data Analytics with Python",
       issuer: "NPTEL",
       date: "2023",
-      link: "src/assets/New folder/Data Analytics with Python.jpg", // Link to the full certificate image
+      link: dataAnalyticsPythonCert, // Link to the full certificate image
       category: "Development",
-      image: "src/assets/logos/nptel.png", // Using the NPTEL logo
+      image: nptelLogo, // Using the NPTEL logo
     },
     {
       name: "Android App Development",
       issuer: "Coursera",
       date: "Apr 2024",
-      link: "src/assets/New folder/android.jpg", // Link to the full certificate image
+      link: androidCert, // Link to the full certificate image
       category: "Development",
-      image: "src/assets/logos/download.png", // Using the Coursera logo
+      image: courseraLogo, // Using the Coursera logo
     },
     {
       name: "The Joy of Computing Using Python",
       issuer: "NPTEL",
       date: "2023",
-      link: "src/assets/New folder/joy.png", // Link to the full certificate image
+      link: joyCert, // Link to the full certificate image
       category: "Development",
-      image: "src/assets/logos/nptel.png", // Using the NPTEL logo
+      image: nptelLogo, // Using the NPTEL logo
     },
     {
       name: "Applied Python: Building Projects with Python Programming",
       issuer: "Udemy",
       date: "2024",
-      link: "src/assets/New folder/python.jpg",
+      link: pythonCert,
       category: "Development",
-      image: "src/assets/logos/og-image.png",
+      image: udemyLogo,
     },
     {
       name: "Windows Security",
       issuer: "Udemy",
       date: "2024",
-      link: "src/assets/New folder/windows-sec.jpg",
+      link: windowsSecCert,
       category: "Development",
-      image: "src/assets/logos/og-image.png",
+      image: udemyLogo,
     },
     {
       name: "Java Training Crash Course for Java Beginners",
       issuer: "Udemy",
       date: "2024",
-      link: "src/assets/New folder/java.jpg",
+      link: javaCert,
       category: "Development",
-      image: "src/assets/logos/og-image.png",
+      image: udemyLogo,
     },
     {
       name: "Linux Modules",
       issuer: "Udemy",
       date: "2024",
-      link: "src/assets/New folder/linux.jpg",
+      link: linuxCert,
       category: "Development",
-      image: "src/assets/logos/og-image.png",
+      image: udemyLogo,
     },
     {
       name: "Windows Command Mastery for Ethical Hackers",
       issuer: "Udemy",
       date: "2024",
-      link: "src/assets/New folder/windows.jpg",
+      link: windowsCert,
       category: "Development",
-      image: "src/assets/logos/og-image.png",
+      image: udemyLogo,
     },
   ];
 
