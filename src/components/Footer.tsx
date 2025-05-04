@@ -13,9 +13,9 @@ const Footer = () => {
           <div className="mb-6 md:mb-0">
             <Link to="/" className="hover:text-primary transition-colors duration-300">
               <img
-                src="/website-logo.png"
+                src="/mylogo.png"
                 alt="Chandra Karravula Logo"
-                className="h-12 w-auto transform transition-transform hover:scale-105"
+                className="h-16 w-auto transform transition-transform hover:scale-105"
               />
             </Link>
             <p className="text-muted-foreground mt-3 text-sm max-w-xs">
