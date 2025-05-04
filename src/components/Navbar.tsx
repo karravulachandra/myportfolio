@@ -58,7 +58,7 @@ const Navbar = () => {
             className="hover:text-primary transition-colors flex items-center"
           >
             <img
-              src="/website-logo.png"
+              src="/mylogo.png"
               alt="Chandra Karravula Logo"
               className="h-12 w-auto transform transition-transform hover:scale-105"
             />
