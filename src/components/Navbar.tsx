@@ -60,7 +60,7 @@ const Navbar = () => {
             <img
               src="/mylogo.png"
               alt="Chandra Karravula Logo"
-              className="h-12 w-auto transform transition-transform hover:scale-105"
+              className="h-16 w-auto transform transition-transform hover:scale-105"
             />
           </Link>
 
