@@ -26,25 +26,35 @@ const About = () => {
                 When I'm not coding, you'll find me exploring new technologies, contributing to open-source projects, or sharing my knowledge through blog posts and community events.
               </p>
               <a
-                href="/resume.pdf"
-                download="resume.pdf"
+                href="https://drive.google.com/file/d/1zFpvr_2gkjakYTxc9XzihfzLNsSOFa96/view?usp=sharing"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center bg-primary hover:bg-primary/90 text-white px-6 py-3 rounded-md font-medium transition-all duration-300 hover:shadow-md"
               >
                 <Download className="mr-2 h-5 w-5" />
-                Download Resume
+                View Resume
               </a>
             </div>
 
             <div className="fade-in-section relative">
               <div className="relative mx-auto group">
                 <div className="absolute inset-0 rounded-full bg-gradient-to-r from-primary/40 to-blue-500/40 blur-xl opacity-70 animate-pulse-subtle group-hover:opacity-100 transition-opacity"></div>
-                <div className="aspect-square w-64 h-64 md:w-80 md:h-80 mx-auto rounded-full overflow-hidden shadow-xl border-4 border-white dark:border-gray-800 relative z-10">
+                <a
+                  href="https://drive.google.com/file/d/1zFpvr_2gkjakYTxc9XzihfzLNsSOFa96/view?usp=sharing"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="cursor-pointer block aspect-square w-64 h-64 md:w-80 md:h-80 mx-auto rounded-full overflow-hidden shadow-xl border-4 border-white dark:border-gray-800 relative z-10 hover:border-primary transition-colors duration-300"
+                  title="Click to view my resume"
+                >
                   <img
                     src="https://media.licdn.com/dms/image/v2/D5603AQEAqipQcwrt_g/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1721897789534?e=1747872000&v=beta&t=nOWoRhKWg95l43hRxjwimi6SRMoydSBzU73ZJ7OqySc"
-                    alt="Chandra Karravula"
+                    alt="Chandra Karravula - Click to view resume"
                     className="w-full h-full object-cover"
                   />
-                </div>
+                  <div className="absolute inset-0 bg-primary/20 opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                    <span className="text-white font-medium text-lg bg-primary/80 px-4 py-2 rounded-full shadow-lg">View Resume</span>
+                  </div>
+                </a>
               </div>
               <div className="absolute -bottom-6 -right-6 w-48 h-48 bg-primary/10 rounded-full -z-10"></div>
               <div className="absolute -top-6 -left-6 w-24 h-24 bg-primary/5 rounded-full -z-10"></div>
