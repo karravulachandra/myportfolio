@@ -61,7 +61,7 @@ const Certifications = () => {
       date: "2023",
       link: "https://www.credly.com/badges/94368d2e-9e13-4c09-90ca-54c5ea9eba53/public_url", // Link to the credential URL
       category: "Cloud",
-      image: "src/assets/logos/googlecloud.jpg", // Using the Google Cloud logo
+      image: "/images/googlecloud.jpg", // Using the Google Cloud logo
     },
     {
       name: "Cloud Digital Leader Certification",
@@ -69,7 +69,7 @@ const Certifications = () => {
       date: "2022",
       link: "https://www.credly.com/badges/a374da7d-dadd-4522-90f9-67d23fb60c88/public_url", // Link to the credential URL
       category: "Cloud",
-      image: "src/assets/logos/googlecloud.jpg", // Using the Google Cloud logo
+      image: "/images/googlecloud.jpg", // Using the Google Cloud logo
     },
     {
       name: "AWS Academy Graduate - AWS Academy Cloud Foundations",
@@ -77,7 +77,7 @@ const Certifications = () => {
       date: "2022",
       link: "https://www.credly.com/badges/9eefeda7-7044-4829-b5c5-a35f473f0eac/public_url", // Link to the credential URL
       category: "Cloud",
-      image: "src/assets/logos/aws.jpg", // Using the AWS logo
+      image: "/images/aws.jpg", // Using the AWS logo
     },
     {
       name: "Microsoft Certified: Azure Fundamentals",
@@ -85,7 +85,7 @@ const Certifications = () => {
       date: "2024",
       link: "https://www.credly.com/badges/3efe931d-05b4-4458-ac38-d767c1eef23b/public_url", // Link to the credential URL
       category: "Cloud",
-      image: "src/assets/logos/microsoft.jpg", // Using the Microsoft logo
+      image: "/images/microsoft.jpg", // Using the Microsoft logo
     },
     {
       name: "Microsoft Certified: Azure Fundamentals",
@@ -93,7 +93,7 @@ const Certifications = () => {
       date: "2024",
       link: "https://www.credly.com/badges/3efe931d-05b4-4458-ac38-d767c1eef23b/public_url", // Link to the credential URL
       category: "Design",
-      image: "src/assets/logos/microsoft.jpg", // Using the Microsoft logo
+      image: "/images/microsoft.jpg", // Using the Microsoft logo
     },
     {
       name: "AWS Educate Introduction to Generative AI",
@@ -101,47 +101,47 @@ const Certifications = () => {
       date: "2025",
       link: "https://www.credly.com/badges/c7fb63d9-1592-4b2d-9a72-d391f69ed562/public_url", // Link to the credential URL
       category: "Design",
-      image: "src/assets/logos/aws.jpg", // Using the AWS logo
+      image: "/images/aws.jpg", // Using the AWS logo
     },
     {
       name: "Google Data Analytics",
       issuer: "Coursera",
       date: "May 2023",
-      link: "src/assets/New folder/googledataanalytics.png", // Link to the full certificate image
+      link: "/images/googledataanalytics.png", // Link to the full certificate image
       category: "Data Science",
-      image: "src/assets/logos/download.png", // Using the Coursera logo
+      image: "/images/coursera-logo.svg", // Using the Coursera logo
     },
     {
       name: "Introduction to Industry 4.0 and Industrial Internet of Things",
       issuer: "NPTEL",
       date: "Jul-Oct 2023",
-      link: "src/assets/New folder/IOT.png", // Link to the full certificate image
+      link: "/images/iot.png", // Link to the full certificate image
       category: "Cloud",
-      image: "src/assets/logos/nptel.png", // Using the NPTEL logo
+      image: "/images/nptel-iot.png", // Using the NPTEL logo
     },
     {
       name: "Cloud Computing and Distributed Systems",
       issuer: "NPTEL",
       date: "Jan-Mar 2023",
-      link: "src/assets/New folder/Cloud Computing and Distributed Systems.png", // Link to the full certificate image
+      link: "/images/cloud-computing-distributed.png", // Link to the full certificate image
       category: "Cloud",
-      image: "src/assets/logos/nptel.png", // Using the NPTEL logo
+      image: "/images/nptel-iot.png", // Using the NPTEL logo
     },
     {
       name: "Cloud Computing",
       issuer: "NPTEL",
       date: "Jul-Oct 2022",
-      link: "src/assets/New folder/Cloud Computing.png", // Link to the full certificate image
+      link: "/images/cloud-computing.png", // Link to the full certificate image
       category: "Cloud",
-      image: "src/assets/logos/nptel.png", // Using the NPTEL logo
+      image: "/images/nptel-iot.png", // Using the NPTEL logo
     },
     {
       name: "Python for Data Science",
       issuer: "NPTEL",
       date: "Jan-Feb 2022",
-      link: "src/assets/New folder/Python for Data Science.jpg", // Link to the full certificate image
+      link: "/images/python-data-science.jpg", // Link to the full certificate image
       category: "Development",
-      image: "src/assets/logos/nptel.png", // Using the NPTEL logo
+      image: "/images/nptel-iot.png", // Using the NPTEL logo
     },
     {
       name: "Data Analytics with Python",
